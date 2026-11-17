@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["i", "keep", "reason", "company", "story_id", "event", "headline", "summary", "why_it_matters", "importance"],
+        "properties": {
+          "i": {"type": "integer", "description": "Index of the input result."},
+          "keep": {"type": "boolean"},
+          "reason": {"type": "string", "description": "A few words: why kept or dropped."},
+          "company": {"type": "string"},
+          "story_id": {"type": "string", "description": "Slug shared by all articles about the same event."},
+          "event": {"type": "string", "enum": ["product_launch", "partnership_client_win", "funding_mna", "financial_results", "leadership", "expansion_market_entry", "regulation_legal", "strategy_interview", "market_trend", "other"]},
+          "headline": {"type": "string"},
+          "summary": {"type": "string"},
+          "why_it_matters": {"type": "string"},
+          "importance": {"type": "integer", "enum": [1, 2, 3]}
+        }
+      }
+    }
+  }
+}

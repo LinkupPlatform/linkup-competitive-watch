@@ -1,0 +1,14 @@
+business_line,category,alert,brand,context,query,domains
+BENEFITS,Benefits,Pluxee,Pluxee,,Pluxee,pluxee.com
+BENEFITS,Benefits,Swile,Swile,,Swile,swile.co
+BENEFITS,Benefits,(Alelo AND beneficios),Alelo,beneficios,Alelo beneficios,alelo.com.br
+BENEFITS,Delivery,(Uber Eats AND business),Uber Eats,business,Uber Eats business,ubereats.com
+FLEET,Fuel cards,DKV Mobility,DKV Mobility,,DKV Mobility,dkv-mobility.com
+FLEET,Fuel cards,WEX,WEX,,WEX,wexinc.com
+FLEET,EV,(Shell Recharge AND fleet),Shell Recharge,fleet,Shell Recharge fleet,shellrecharge.com
+FLEET,EV,Plugsurfing,Plugsurfing,,Plugsurfing,plugsurfing.com
+PAYMENTS,Card issuing,Marqeta,Marqeta,,Marqeta,marqeta.com
+PAYMENTS,B2B,Pliant,Pliant,,Pliant,getpliant.com
+PAYMENTS,B2B,(Stripe AND payments),Stripe,payments,Stripe payments,stripe.com
+PAYMENTS,B2B,Qonto or (anytime AND bank),Qonto,,Qonto,qonto.com
+PAYMENTS,B2B,Qonto or (anytime AND bank),anytime,bank,anytime bank,qonto.com
