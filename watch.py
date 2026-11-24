@@ -296,10 +296,11 @@ def cmd_consolidate(a):
             f'from stories_to_consolidate.json (see prompts/consolidate.md)')
         return
     import anthropic
-    resp = anthropic.Anthropic().messages.create(
-        model=a.model, max_tokens=32000, system=(PROMPTS / 'consolidate.md').read_text(),
-        output_config={'effort': 'low', 'format': {'type': 'json_schema', 'schema': CONSOLIDATE_SCHEMA}},
-        messages=[{'role': 'user', 'content': json.dumps(listing, ensure_ascii=False)}])
+    with anthropic.Anthropic().messages.stream(
+            model=a.model, max_tokens=32000, system=(PROMPTS / 'consolidate.md').read_text(),
+            output_config={'effort': 'low', 'format': {'type': 'json_schema', 'schema': CONSOLIDATE_SCHEMA}},
+            messages=[{'role': 'user', 'content': json.dumps(listing, ensure_ascii=False)}]) as stream:
+        resp = stream.get_final_message()
     mapping = json.loads(next(b.text for b in resp.content if b.type == 'text'))['map']
     json.dump(mapping, open(out / 'story_map.json', 'w'), ensure_ascii=False, indent=1)
     log(f'[{a.bl}] consolidated {len(listing)} items into {len({m["story_id"] for m in mapping})} stories')
